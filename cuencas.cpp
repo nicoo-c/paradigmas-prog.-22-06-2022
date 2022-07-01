@@ -5,13 +5,13 @@ using namespace std;
 
 int main(){
 
-	geoloc g1(2.2, 4.7, 10.3);
-	geoloc g2(4.4, 5.6, 1.5);
+	geoloc g1(2.2, 4.7, "10.3");
+	geoloc g2(4.4, 5.6, "1.5");
   geoloc g3;
-  nodo n1(g1);
-	nodo n2(g2);
+  nodo n1(g1, 3);
+	nodo n2(g2, 5);
   nodo n3;
-  arista a1(n1, n2, 3);
+  arista a1(n1, n2);
   arista a2;
   poste p1(g1, 3);
   poste p2;
@@ -22,11 +22,11 @@ int main(){
 
   cout << "Geolocalizacion 3: \nCoordenada x = " << g3.obtC_X() << endl << "Coordenada y = " << g3.obtC_Y() << endl << "Metros sobre el nivel del mar = " << g3.obtMSNM() << "\n\n";
 
-  cout << "Nodo 1: \nCoordenada x = " << n1.obtGeo().obtC_X() << endl << "Coordenada y = " << n1.obtGeo().obtC_Y() << endl << "Metros sobre el nivel del mar = " << n1.obtGeo().obtMSNM() << "\n\n";
+  cout << "Nodo 1: \nCoordenada x = " << n1.obtGeo().obtC_X() << endl << "Coordenada y = " << n1.obtGeo().obtC_Y() << endl << "Metros sobre el nivel del mar = " << n1.obtGeo().obtMSNM() << endl << "Caudal = " << n1.obtC() << "\n\n";
 
-  cout << "Nodo 2: \nCoordenada x = " << n2.obtGeo().obtC_X() << endl << "Coordenada y = " << n2.obtGeo().obtC_Y() << endl << "Metros sobre el nivel del mar = " << n2.obtGeo().obtMSNM() << "\n\n";
+  cout << "Nodo 2: \nCoordenada x = " << n2.obtGeo().obtC_X() << endl << "Coordenada y = " << n2.obtGeo().obtC_Y() << endl << "Metros sobre el nivel del mar = " << n2.obtGeo().obtMSNM() << endl << "Caudal = " << n2.obtC() << "\n\n";
 
-  cout << "Nodo 3: \nCoordenada x = " << n3.obtGeo().obtC_X() << endl << "Coordenada y = " << n3.obtGeo().obtC_Y() << endl << "Metros sobre el nivel del mar = " << n3.obtGeo().obtMSNM() << "\n\n";
+  cout << "Nodo 3: \nCoordenada x = " << n3.obtGeo().obtC_X() << endl << "Coordenada y = " << n3.obtGeo().obtC_Y() << endl << "Metros sobre el nivel del mar = " << n3.obtGeo().obtMSNM() << endl << "Caudal = " << n3.obtC() << "\n\n";
 
   cout << "Arista 1: \nNodo inicial: \nCoordenada x = " << a1.obtNI().obtGeo().obtC_X() << endl << "Coordenada y = " << a1.obtNI().obtGeo().obtC_Y() << endl << "Metros sobre el nivel del mar = " << a1.obtNI().obtGeo().obtMSNM() << endl << "Nodo final: \nCoordenada x = " << a1.obtNF().obtGeo().obtC_X() << endl << "Coordenada y = " << a1.obtNF().obtGeo().obtC_Y() << endl << "Metros sobre el nivel del mar = " << a1.obtNF().obtGeo().obtMSNM() << "\n\n";
 
@@ -39,7 +39,7 @@ int main(){
 
   g1.defC_X(44.2);
   g1.defC_Y(123.4);
-  g1.defMSNM(15.4);
+  g1.defMSNM("15.4");
 
 	/*cout << "2 intento: \n Latitud g1:" << g1.obtC_X() << endl << "Longitud g1:" <<  g1.obtC_Y() << endl << "Altura g1:" << g1.obtMSNM() << endl;*/
 

@@ -50,7 +50,7 @@ class geoloc{
 
   void defMSNM(double msnm1){
 
-    h = msnm1;
+    msnm = msnm1;
 
   }
 

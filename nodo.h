@@ -6,7 +6,7 @@ class nodo{
 
 	public:
 
-  nodo(geoloc g1){
+  nodo(geoloc g1 = geoloc(1,1,1)){
 
     g = g1;
 
@@ -24,4 +24,4 @@ class nodo{
 
   }
 
-}
+};

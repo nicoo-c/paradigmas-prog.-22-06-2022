@@ -1,14 +1,14 @@
 #include "geoloc.h"
-#define C_OMISION 1
+#define C_OMISION "1"
 
 class nodo{
 
 	geoloc g;
-  double caudal;
+	string caudal;
 
 	public:
 
-  nodo(geoloc g1 = geoloc(1, 1, "1"), double c = C_OMISION){
+  nodo(geoloc g1 = geoloc(1, 1, "1"), string c = C_OMISION){
 
     g = g1;
     caudal = c;
@@ -21,7 +21,7 @@ class nodo{
 
   }
 
-  double obtC(){
+  string obtC(){
 
     return caudal;
 
@@ -33,7 +33,7 @@ class nodo{
 
   }
 
-  void defC(double c){
+  void defC(string c){
 
     caudal = c;
 

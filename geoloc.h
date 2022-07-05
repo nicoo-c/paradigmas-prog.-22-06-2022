@@ -1,3 +1,4 @@
+#include <string>
 using namespace std;
 
 #define COOR_X_OMISION 1

@@ -1,5 +1,5 @@
 #include "nodo.h"
-#define H_OMISION 1
+#define H_OMISION "1"
 
 class arista{
 
@@ -8,7 +8,7 @@ class arista{
 
  public:
 
-  arista(nodo i1 = geoloc(1, 1, "1"), nodo f1 = geoloc(1, 1, "1")){
+  arista(nodo i1 = geoloc(1, 1, 1), nodo f1 = geoloc(1, 1, 1)){
 
     i = i1;
     f = f1;
@@ -44,11 +44,11 @@ class arista{
 class poste{
 
   geoloc g;
-  double hTotal;
+  string hTotal;
 
  public:
 
-  poste(geoloc g1 = geoloc(1, 1, "1"), double hT = H_OMISION){
+  poste(geoloc g1 = geoloc(1, 1, 1), string hT = H_OMISION){
 
     g = g1;
     hTotal = hT;
@@ -61,7 +61,7 @@ class poste{
 
   }
 
-  double obtHT(){
+  string obtHT(){
 
     return hTotal;
 

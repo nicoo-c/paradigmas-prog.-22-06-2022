@@ -8,7 +8,7 @@ class nodo{
 
 	public:
 
-  nodo(geoloc g1 = geoloc(1, 1, "1"), string c = C_OMISION){
+  nodo(geoloc g1 = geoloc(1, 1, 1), string c = C_OMISION){
 
     g = g1;
     caudal = c;
@@ -36,6 +36,24 @@ class nodo{
   void defC(string c){
 
     caudal = c;
+
+  }
+
+  string compararCaudal(string min, string max){
+
+    if(caudal < min){
+
+      return "Alerta baja";
+
+    }else if(caudal > max){
+
+      return "Alerta alza";
+
+    }else{
+
+      return "Normal";
+
+    }
 
   }
 

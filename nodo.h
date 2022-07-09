@@ -1,14 +1,14 @@
 #include "geoloc.h"
-#define C_OMISION "1"
+#define C_OMISION 1
 
 class nodo{
 
 	geoloc g;
-	string caudal;
+	double caudal;
 
 	public:
 
-  nodo(geoloc g1 = geoloc(1, 1, 1), string c = C_OMISION){
+  nodo(geoloc g1 = geoloc(1, 1, 1), double c = C_OMISION){
 
     g = g1;
     caudal = c;
@@ -21,7 +21,7 @@ class nodo{
 
   }
 
-  string obtC(){
+  double obtC(){
 
     return caudal;
 
@@ -33,25 +33,25 @@ class nodo{
 
   }
 
-  void defC(string c){
+  void defC(double c){
 
     caudal = c;
 
   }
 
-  string compararCaudal(string min, string max){
+  string compararCaudal(double min, double max){
 
     if(caudal < min){
 
-      return "Alerta baja";
+      return "Alerta baja                                              ";
 
     }else if(caudal > max){
 
-      return "Alerta alza";
+      return "Alerta alza                                              ";
 
     }else{
 
-      return "Normal";
+      return "Normal                                                   ";
 
     }
 

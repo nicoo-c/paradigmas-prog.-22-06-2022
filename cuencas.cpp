@@ -18,6 +18,7 @@ int main() {
     vector<vector<string>> matriz_salida {};
     lista L = NULL;
     creacion(L);
+    string salida;
 
     geoloc glacial1(-33.0553309, -70.0974934, 5482.2498764);
     geoloc glacial2(-33.0648283, -70.0801479, 4872.0800966);
@@ -447,6 +448,12 @@ int main() {
     zanjon[26].defGeo(zanjon27);
     zanjon[27].defGeo(zanjon28);
 
+    geoloc embalse1(-33.6514564, -70.0760077, 2567.574949);
+
+    poste embalse[1];
+
+    embalse[0].defGeo(embalse1); // EEYS
+
     crearMatriz(matriz_entrada);
 
     string fecha, nombre;
@@ -464,106 +471,363 @@ int main() {
             }else if(j == 0){ //fechas
                  
                 fecha = convertirFecha(matriz_entrada[i][j]);
-                cout << fecha << endl;
+               // cout << fecha << endl;
                 datos.push_back(fecha);
             
             }else if(i == 0){ //nombre
             
                 nombre = recorrerLLS(L, matriz_entrada[i][j]);
-                cout << nombre << endl;
+                //cout << matriz_entrada[i][j] << endl;
                 datos.push_back(nombre);
-                
-            }else{
 
-                
+                if(matriz_entrada[i][j] == "OGJS"){
 
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        olivares[0].defC(stod(matriz_entrada[u][j]));
+                        salida = olivares[0].compararCaudal(MIN_OGJS, MAX_OGJS);
+                        //cout << salida << endl;
+                        datos.push_back(salida);
+
+                    }
+
+                }else if(matriz_entrada[i][j] == "OGSO"){
+                    
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+                        olivares[3].defC(stod(matriz_entrada[u][j]));
+                        salida = olivares[3].compararCaudal(MIN_OGSO, MAX_OGSO);
+                        datos.push_back(salida);
+                       
+                    }
+
+
+                }else if(matriz_entrada[i][j] == "OEPC"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        olivares[4].defC(stod(matriz_entrada[u][j]));
+                        salida = olivares[4].compararCaudal(MIN_OEPC, MAX_OEPC);
+                        datos.push_back(salida);
+
+                    }
+
+                }else if(matriz_entrada[i][j] == "OECF"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        olivares[6].defC(stod(matriz_entrada[u][j]));
+                        salida = olivares[6].compararCaudal(MIN_OECF, MAX_OECF);
+                        datos.push_back(salida);
+
+                    }
+                    
+
+                }else if(matriz_entrada[i][j] == "OETL"){
+                    
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+                        
+                        olivares[7].defC(stod(matriz_entrada[u][j]));
+                        salida = olivares[7].compararCaudal(MIN_OETL, MAX_OETL);
+                        datos.push_back(salida);
+                    
+                    }
                 
-            }            
+                }else if(matriz_entrada[i][j] == "OELP"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        olivares[8].defC(stod(matriz_entrada[u][j]));
+                        salida = olivares[8].compararCaudal(MIN_OELP, MAX_OELP);
+                        datos.push_back(salida);
+
+                    }
+                    
+
+                }else if(matriz_entrada[i][j] == "OQMH"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        olivares[9].defC(stod(matriz_entrada[u][j]));
+                        salida = olivares[9].compararCaudal(MIN_OQMH, MAX_OQMH);
+                        datos.push_back(salida);
+
+                    }
+
+                }else if(matriz_entrada[i][j] == "OEPT"){
+                    
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+                        
+                        olivares[12].defC(stod(matriz_entrada[u][j]));
+                        salida = olivares[12].compararCaudal(MIN_OEPT, MAX_OEPT);
+                        datos.push_back(salida);
+                    
+                    }
+
+                }else if(matriz_entrada[i][j] == "ORCR"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        olivares[16].defC(stod(matriz_entrada[u][j]));
+                        salida = olivares[16].compararCaudal(MIN_ORCR, MAX_ORCR);
+                        datos.push_back(salida);
+
+                    }
+            
+                }else if(matriz_entrada[i][j] == "CETG"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        colorado[5].defC(stod(matriz_entrada[u][j]));
+                        salida = colorado[5].compararCaudal(MIN_CETG, MAX_CETG);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "CQPD"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        colorado[8].defC(stod(matriz_entrada[u][j]));
+                        salida = colorado[8].compararCaudal(MIN_CQPD, MAX_CQPD);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "CEQB"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        colorado[12].defC(stod(matriz_entrada[u][j]));
+                        salida = colorado[12].compararCaudal(MIN_CEQB, MAX_CEQB);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "CEMN"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        colorado[14].defC(stod(matriz_entrada[u][j]));
+                        salida = colorado[14].compararCaudal(MIN_CEMN, MIN_CEMN);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "CEBA"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        colorado[15].defC(stod(matriz_entrada[u][j]));
+                        salida = colorado[15].compararCaudal(MIN_CEBA, MAX_CEBA);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "CRMS"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        colorado[34].defC(stod(matriz_entrada[u][j]));
+                        salida = colorado[34].compararCaudal(MIN_CRMS, MAX_CRMS);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "CELV"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        colorado[43].defC(stod(matriz_entrada[u][j]));
+                        salida = colorado[43].compararCaudal(MIN_CELV, MAX_CELV);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "CRMP"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        colorado[61].defC(stod(matriz_entrada[u][j]));
+                        salida = colorado[61].compararCaudal(MIN_CRMP, MAX_CRMP);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "MRYS"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        maipo[9].defC(stod(matriz_entrada[u][j]));
+                        salida = maipo[9].compararCaudal(MIN_MRYS, MAX_MRYS);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "MEMT"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        maipo[11].defC(stod(matriz_entrada[u][j]));
+                        salida = maipo[11].compararCaudal(MIN_MEMT, MAX_MEMT);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "MQLC"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        maipo[12].defC(stod(matriz_entrada[u][j]));
+                        salida = maipo[12].compararCaudal(MIN_MQLC, MAX_MQLC);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "MECC"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        maipo[13].defC(stod(matriz_entrada[u][j]));
+                        salida = maipo[13].compararCaudal(MIN_MECC, MAX_MECC);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "MEES"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        maipo[14].defC(stod(matriz_entrada[u][j]));
+                        salida = maipo[14].compararCaudal(MIN_MEES, MAX_MEES);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "MEEM"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        maipo[18].defC(stod(matriz_entrada[u][j]));
+                        salida = maipo[18].compararCaudal(MIN_MEEM, MAX_MEEM);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "MRCR"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        maipo[21].defC(stod(matriz_entrada[u][j]));
+                        salida = maipo[21].compararCaudal(MIN_MRCR, MAX_MRCR);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "YEYS"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        yeso[0].defC(stod(matriz_entrada[u][j]));
+                        salida = yeso[0].compararCaudal(MIN_YEYS, MAX_YEYS);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "YESN"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        yeso[12].defC(stod(matriz_entrada[u][j]));
+                        salida = yeso[12].compararCaudal(MIN_YESN, MAX_YESN);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "MEAM"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        quebrada[1].defC(stod(matriz_entrada[u][j]));
+                        salida = quebrada[1].compararCaudal(MIN_MEAM, MAX_MEAM);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "MQDZ"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        quebrada[5].defC(stod(matriz_entrada[u][j]));
+                        salida = quebrada[5].compararCaudal(MIN_MQDZ, MAX_MQDZ);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "ACSC"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        zanjon[5].defC(stod(matriz_entrada[u][j]));
+                        salida = quebrada[5].compararCaudal(MIN_ACSC, MAX_ACSC);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "ATIR"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        zanjon[13].defC(stod(matriz_entrada[u][j]));
+                        salida = quebrada[13].compararCaudal(MIN_ATIR, MAX_ATIR);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "ATAS"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        zanjon[21].defC(stod(matriz_entrada[u][j]));
+                        salida = quebrada[21].compararCaudal(MIN_ATAS, MAX_ATAS);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "ARMP"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        zanjon[27].defC(stod(matriz_entrada[u][j]));
+                        salida = quebrada[27].compararCaudal(MIN_ARMP, MAX_ARMP);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }else if(matriz_entrada[i][j] == "EEYS"){
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        embalse[0].defHT(stod(matriz_entrada[u][j]));
+                        salida = embalse[0].compararAltura(MIN_EEYS, MAX_EEYS);
+                        datos.push_back(salida);
+
+                    }
+                    
+                }
+                
+            }
             
         }
         matriz_salida.push_back(datos);
     }
 
-
-
-
-    /*for(int j = 0; j < matriz_entrada[0].size(); j++){
-
-        cout << matriz_entrada[0][j] << endl;
-
-        if(matriz_entrada[0][j] == "OGJS"){
-
-            cout << "ENTRÉ \n";
-
-            for(int i = 1; i < matriz_entrada.size(); i++){
-
-                olivares[0].defC(matriz_entrada[i][j]);
-
-                matriz_salida[p][q] = olivares[0].compararCaudal(MIN_OGJS, MAX_OGJS);
-
-
-            }
-
-        }       
-
-    }*/
-
-    /*cout << "Geolocalizacion 1:\nCoordenada x = " << glacial1.obtC_X() << endl
-        << "Coordenada y = " << glacial1.obtC_Y() << endl
-        << "Metros sobre el nivel del mar = " << glacial1.obtMSNM() << "\n\n";
-
-    cout << "Geolocalizacion 2: \nCoordenada x = " << glacial2.obtC_X() << endl
-        << "Coordenada y = " << glacial2.obtC_Y() << endl
-        << "Metros sobre el nivel del mar = " << glacial2.obtMSNM() << "\n\n";
-
-    cout << "Geolocalizacion 3: \nCoordenada x = " << glacial3.obtC_X() << endl
-        << "Coordenada y = " << glacial3.obtC_Y() << endl
-        << "Metros sobre el nivel del mar = " << glacial3.obtMSNM() << "\n\n";
-
-    cout << "Nodo 1: \nCoordenada x = " << n1.obtGeo().obtC_X() << endl
-        << "Coordenada y = " << n1.obtGeo().obtC_Y() << endl
-        << "Metros sobre el nivel del mar = " << n1.obtGeo().obtMSNM() << endl
-        << "Caudal = " << n1.obtC() << "\n\n";
-
-    cout << "Nodo 2: \nCoordenada x = " << n2.obtGeo().obtC_X() << endl
-        << "Coordenada y = " << n2.obtGeo().obtC_Y() << endl
-        << "Metros sobre el nivel del mar = " << n2.obtGeo().obtMSNM() << endl
-        << "Caudal = " << n2.obtC() << "\n\n";
-
-    cout << "Nodo 3: \nCoordenada x = " << n3.obtGeo().obtC_X() << endl
-        << "Coordenada y = " << n3.obtGeo().obtC_Y() << endl
-        << "Metros sobre el nivel del mar = " << n3.obtGeo().obtMSNM() << endl
-        << "Caudal = " << n3.obtC() << "\n\n";
-
-    cout << "Arista 1: \nNodo inicial: \nCoordenada x = "
-        << a1.obtNI().obtGeo().obtC_X() << endl
-        << "Coordenada y = " << a1.obtNI().obtGeo().obtC_Y() << endl
-        << "Metros sobre el nivel del mar = " << a1.obtNI().obtGeo().obtMSNM()
-        << endl
-        << "Nodo final: \nCoordenada x = " << a1.obtNF().obtGeo().obtC_X()
-        << endl
-        << "Coordenada y = " << a1.obtNF().obtGeo().obtC_Y() << endl
-        << "Metros sobre el nivel del mar = " << a1.obtNF().obtGeo().obtMSNM()
-        << "\n\n";
-
-    cout << "Arista 2: \nNodo inicial: \nCoordenada x = "
-        << a2.obtNI().obtGeo().obtC_X() << endl
-        << "Coordenada y = " << a2.obtNI().obtGeo().obtC_Y() << endl
-        << "Metros sobre el nivel del mar = " << a2.obtNI().obtGeo().obtMSNM()
-        << endl
-        << "Nodo final: \nCoordenada x = " << a2.obtNF().obtGeo().obtC_X()
-        << endl
-        << "Coordenada y = " << a2.obtNF().obtGeo().obtC_Y() << endl
-        << "Metros sobre el nivel del mar = " << a2.obtNF().obtGeo().obtMSNM()
-        << "\n\n";
-
-    cout << "Poste 2: \nCoordenada x = " << p2.obtGeo().obtC_X() << endl
-        << "Coordenada y = " << p2.obtGeo().obtC_Y() << endl
-        << "Metros sobre el nivel del mar = " << p2.obtGeo().obtMSNM() << endl
-        << "Altura total = " << p2.obtHT() << "\n\n";
-
-    cout << "2 intento: \n Latitud glacial1:" << glacial1.obtC_X() << endl << "Longitud glacial1:"
-    * <<  glacial1.obtC_Y() << endl << "Altura glacial1:" << glacial1.obtMSNM() << endl;*/
+    
+    for(int j = 0; j < matriz_salida[0].size(); j++){
+        for(int i = 0; i < matriz_salida.size(); i++){
+            cout << matriz_salida[i][j] << "\t";
+        }
+        cout << endl;
+    }
 
     return 0;
 }
@@ -610,37 +874,7 @@ void crearMatriz(vector<vector<string>> &matriz_entrada) {
   }
 }
 
-void filas(vector<vector<string>> matriz_entrada) {
 
-    for (int i = 0; i < matriz_entrada.size(); i++) {
-
-        for (int j = 0; j < matriz_entrada[0].size(); j++) {
-
-            cout << matriz_entrada[i][j] << " ";
-        
-        }
-
-        cout << "\n";
-
-    }
-
-}
-
-void columnas(vector<vector<string>> matriz_entrada) {
-
-    for (int j = 0; j < matriz_entrada[0].size(); j++) {
-
-        for (int i = 0; i < matriz_entrada.size(); i++) {
-
-        cout << matriz_entrada[i][j] << " ";
-
-        }
-
-        cout << "\n";
-
-    }
-
-}
 
 string recorrerLLS(lista L, string abr){
     

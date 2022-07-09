@@ -1,5 +1,5 @@
 #include "nodo.h"
-#define H_OMISION "1"
+#define H_OMISION 1
 
 class arista{
 
@@ -44,11 +44,11 @@ class arista{
 class poste{
 
   geoloc g;
-  string hTotal;
+  double hTotal;
 
  public:
 
-  poste(geoloc g1 = geoloc(1, 1, 1), string hT = H_OMISION){
+  poste(geoloc g1 = geoloc(1, 1, 1), double hT = H_OMISION){
 
     g = g1;
     hTotal = hT;
@@ -61,7 +61,7 @@ class poste{
 
   }
 
-  string obtHT(){
+  double obtHT(){
 
     return hTotal;
 
@@ -76,6 +76,25 @@ class poste{
   void defHT(double hT){
 
     hTotal = hT;
+
+  }
+
+  string compararAltura(double min, double max){
+
+    if(hTotal < min){
+
+      return "Alerta baja                                              ";
+
+    }else if(hTotal > max){
+
+      return "Alerta alza                                              ";
+
+    }else{
+
+      return "Normal                                                   ";
+
+    }
+
 
   }
 

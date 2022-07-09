@@ -41,7 +41,7 @@
 #define MIN_CEQB "20" // CEQB Río Colorado - Estero del Quebrado
 #define MAX_CEQB "100"
 
-#define MIN_CEMN "20" // Río Colorado - Estero de la Mona
+#define MIN_CEMN "20" // CEMN Río Colorado - Estero de la Mona
 #define MAX_CEMN "100"
  
 #define MIN_CEBA "20" // CEBA Río Colorado - Estero Blandas Aguas 
@@ -73,31 +73,31 @@
 #define MIN_MEEM "20" // MEEM Río Maipo - Estero el Manzano
 #define MAX_MEEM "100"
 
-#define MIN_MRCR "20" //MRCR Río Maipo - Río Clarillo
+#define MIN_MRCR "20" // MRCR Río Maipo - Río Clarillo
 #define MAX_MRCR "100"
 
-#define MIN_MRYS "20" //MRYS Río Maipo - Río Yeso
+#define MIN_MRYS "20" // MRYS Río Maipo - Río Yeso
 #define MAX_MRYS "100"
 
 // Río Yeso
 
-#define MIN_YEYS "20" //YEYS Río Yeso - Salida del Embalse El Yeso
+#define MIN_YEYS "20" // YEYS Río Yeso - Embalse El Yeso
 #define MAX_YEYS "100"
 
-#define MIN_YESN "20" //YESN Río Yeso - Estero San Nicolas
+#define MIN_YESN "20" // YESN Río Yeso - Estero San Nicolas
 #define MAX_YESN "100"
 
 // Embalse El Yeso
 
-#define MIN_EEYS "20" //EEYS Embalse El Yeso
+#define MIN_EEYS "20" // EEYS Embalse El Yeso
 #define MAX_EEYS "100"
 
 // Quebrada de Macul
 
-#define MIN_MEAM "20" //MEAM Quebrada de Macul - Estero Agua del Maqui
+#define MIN_MEAM "20" // MEAM Quebrada de Macul - Estero Agua del Maqui
 #define MAX_MEAM "100"
 
-#define MIN_MQDZ "20" //MQDZ Quebrada de Macul - Quebrada El Durazno
+#define MIN_MQDZ "20" // MQDZ Quebrada de Macul - Quebrada El Durazno
 #define MAX_MQDZ "100"
 
 // Zanjón de la Aguada

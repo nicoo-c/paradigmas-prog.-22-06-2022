@@ -12,25 +12,42 @@ Instrucciones de compilación:
 
 - Para cada nombre de cuenca se deberán seguir las siguientes notaciones:
 
-Río Olivares + Estero Picarte = OEP
-Río Olivares + Glaciar Juncal Sur = OGJS
-Río Olivares + Gran Salto de Olivares = OGSO
-Río Olivares + Río Colorado(del que es tributario) = O_RC
-Río Colorado + Afluentes del Noreste = CAN
-Río Colorado + Punto de llegada del Río Olivares = C_RO
-Río Colorado + cuenca del Río Museo = CCRM
-Río Colorado + Estero la Vaca = CEV
-Río Colorado + Confluencia AL Maipo = C_RM
-Río Maipo + Esteros Manzanito = MEM
-Río Maipo + Estero Coyanco =MEC
-Río Maipo + Estero La Calchona= MELC
-Río Maipo + Estero El Sauce = MEES
-Río Maipo + Estero el Manzano = MELM
-Río Maipo + Río Clarillo = MRC
-Río Yeso + Salida del Embalse El Yeso = RYSEY
-Quebrada de Macul + Tramo soterrado = MTS
-Quebrada de Macul + bifurcación = QMB
-Quebrada de Macul + Quebrada El Durazno = QQMD
-Quebrada de Macul + Estero Agua del Maqui = QMEAM
-Quebrada de Macul + curso de agua en Antupirén Alto = QMAA
-Quebrada de Macul + llegada al Mapocho = QMM 
+Río Olivares - Glaciar Juncal Sur = OGJS
+Río Olivares - Gran Salto de Olivares = OGSO   
+Río Olivares - Estero Picarte = OEPC 
+Río Olivares - Estero Cordillera Ferrosa = OECF 
+Río Olivares - Estero Tabolango = OETL 
+Río Olivares - Estero de las Pircas = OELP 
+Río Olivares - Quebrada Mil Hojas = OQMH 
+Río Olivares - Estero Lomas Coloradas = OELC 
+Río Olivares - Estero Potrillos = OEPT 
+Río Olivares - Río Colorado = ORCR 
+
+Río Colorado - Estero del Tupungatito = CETG
+Río Colorado - Quebrada del Perdido = CQPD
+Río Colorado - Estero del Quebrado = CEQB
+Río Colorado - Estero de la Mona = CEMN
+Río Colorado - Estero Blandas Aguas = CEBA
+Río Colorado - Río Museo = CRMS
+Río Colorado - Estero La Vaca = CELV
+Río Colorado - Río Maipo = CRMP
+
+Río Maipo - Esteros Manzanito = MEMT
+Río Maipo - Estero Coyanco =MECC
+Río Maipo - Quebrada La Calchona = MQLC
+Río Maipo - Estero El Sauce = MEES
+Río Maipo - Estero el Manzano = MEEM
+Río Maipo - Río Clarillo = MRCR
+Río Maipo - Río Yeso = MRYS
+
+Río Yeso - Salida del Embalse El Yeso = YEYS
+Río Yeso - Estero San Nicolas = YESN
+
+Embalse El Yeso = EEYS
+
+Quebrada de Macul - Estero Agua del Maqui = MEAM
+Quebrada de Macul - Quebrada El Durazno = MQDZ
+Zanjón de la Aguada - Tramo soterrado Isabel Riquelme = ATIR
+Zanjón de la Aguada - Tramo soterrado Autopista del Sol = ATAS
+Zanjón de la Aguada - Canal San Carlos = ACSC
+Zanjón de la Aguada - Río Mapocho = ARMP

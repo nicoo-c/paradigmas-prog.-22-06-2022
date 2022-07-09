@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "arista-poste.h"
+#include "notacion.h"
 
 using namespace std;
 
@@ -9,13 +10,14 @@ void crearMatriz(vector<vector<string>> &matriz_entrada);
 string convertirFecha(string fecha);
 void columnas(vector<vector<string>> matriz_entrada); // Solo para ver
 void filas(vector<vector<string>> matriz_entrada);
+string recorrerLLS(lista L, string abr);
 
 int main() {
 
     vector<vector<string>> matriz_entrada{};
-    vector<vector<string>> matriz_salida {{"Fecha Hora"}};
-
-    int p = 1, q = 0;
+    vector<vector<string>> matriz_salida {};
+    lista L = NULL;
+    creacion(L);
 
     geoloc glacial1(-33.0553309, -70.0974934, 5482.2498764);
     geoloc glacial2(-33.0648283, -70.0801479, 4872.0800966);
@@ -447,26 +449,41 @@ int main() {
 
     crearMatriz(matriz_entrada);
 
-    cout << matriz_salida[0][0] << endl << matriz_salida[0][1] << endl;
+    string fecha, nombre;
+     
+    for(int j = 0; j < matriz_entrada[0].size(); j++){
 
-    for(int i = 1; i < matriz_entrada.size(); i++){
+        vector<string> datos {};
+        
+        for(int i = 0; i < matriz_entrada.size(); i++){
 
-        p++;
+            if(i == 0 && j == 0){
 
+                datos.push_back("Fecha\tHora");
+
+            }else if(j == 0){ //fechas
+                 
+                fecha = convertirFecha(matriz_entrada[i][j]);
+                cout << fecha << endl;
+                datos.push_back(fecha);
+            
+            }else if(i == 0){ //nombre
+            
+                nombre = recorrerLLS(L, matriz_entrada[i][j]);
+                cout << nombre << endl;
+                datos.push_back(nombre);
+                
+            }else{
+
+                
+
+                
+            }            
+            
+        }
+        matriz_salida.push_back(datos);
     }
 
-    p = 0;
-    q = 1;
-
-    /*for(int i = 0; i < matriz_entrada.size(); i++){
-
-        for(int j = 0; j < matriz_entrada[0].size(); j++){
-
-            cout << matriz_entrada[i][j] << endl;
-
-        }
-
-    }*/
 
 
 
@@ -597,7 +614,7 @@ void filas(vector<vector<string>> matriz_entrada) {
 
     for (int i = 0; i < matriz_entrada.size(); i++) {
 
-        for (int j = 1; j < matriz_entrada[0].size(); j++) {
+        for (int j = 0; j < matriz_entrada[0].size(); j++) {
 
             cout << matriz_entrada[i][j] << " ";
         
@@ -611,11 +628,11 @@ void filas(vector<vector<string>> matriz_entrada) {
 
 void columnas(vector<vector<string>> matriz_entrada) {
 
-    for (int i = 0; i < matriz_entrada[0].size(); i++) {
+    for (int j = 0; j < matriz_entrada[0].size(); j++) {
 
-        for (int j = 0; j < matriz_entrada.size(); j++) {
+        for (int i = 0; i < matriz_entrada.size(); i++) {
 
-        cout << matriz_entrada[j][i] << " ";
+        cout << matriz_entrada[i][j] << " ";
 
         }
 
@@ -623,4 +640,21 @@ void columnas(vector<vector<string>> matriz_entrada) {
 
     }
 
+}
+
+string recorrerLLS(lista L, string abr){
+    
+    lista p = L;
+
+    while(p != NULL){
+
+        if(p->abreviatura == abr)
+
+            return p->nombre;
+
+        else
+            p = p->sig;
+    }
+
+    return "xd";
 }

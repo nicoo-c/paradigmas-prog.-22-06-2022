@@ -56,7 +56,7 @@ string Notacion(lista L, string abr){
             return p->nombre;
     }
 
-    return "xd";
+    return "Indefinido";
 }
 
 

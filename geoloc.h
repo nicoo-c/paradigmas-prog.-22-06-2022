@@ -1,4 +1,3 @@
-#include <string>
 #include "minmax.h"
 #define COOR_X_OMISION 1
 #define COOR_Y_OMISION 1

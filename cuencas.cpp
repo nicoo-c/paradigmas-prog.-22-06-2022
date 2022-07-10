@@ -813,6 +813,15 @@ int main() {
 
                     }
                     
+                }else{ // La abreviación no coincide con ninguna de las especificadas en las instrucciones del programa
+
+                    for(int u = 1; u < matriz_entrada.size(); u++){
+
+                        salida = "Indefinido";
+                        datos.push_back(salida);
+
+                    }
+
                 }
                 
             }
@@ -823,10 +832,15 @@ int main() {
 
     
     for(int j = 0; j < matriz_salida[0].size(); j++){
+
         for(int i = 0; i < matriz_salida.size(); i++){
+
             cout << matriz_salida[i][j] << "\t";
+
         }
+
         cout << endl;
+
     }
 
     return 0;
@@ -874,8 +888,6 @@ void crearMatriz(vector<vector<string>> &matriz_entrada) {
   }
 }
 
-
-
 string recorrerLLS(lista L, string abr){
     
     lista p = L;
@@ -890,5 +902,5 @@ string recorrerLLS(lista L, string abr){
             p = p->sig;
     }
 
-    return "xd";
+    return "Indefinido";
 }
